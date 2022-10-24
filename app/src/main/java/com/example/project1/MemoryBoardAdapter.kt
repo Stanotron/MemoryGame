@@ -7,8 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.cardview.widget.CardView
-import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.project1.models.BoardSize
 import com.example.project1.models.MemoryCard
@@ -34,7 +32,7 @@ class MemoryBoardAdapter(
         val cardHeight: Int = parent.height/boardSize.getHeight() -(2 * Margin_Size)
         val cardsidelength: Int = min(cardWidth,cardHeight)
         val view = LayoutInflater.from(context).inflate(R.layout.memory_card, parent, false)
-        val layoutParams = view.findViewById<CardView>(R.id.cardView).layoutParams as ViewGroup.MarginLayoutParams
+        val layoutParams = view.findViewById<CardView>(R.id.CardView).layoutParams as ViewGroup.MarginLayoutParams
         layoutParams.height = cardsidelength
         layoutParams.width = cardsidelength
         layoutParams.setMargins(Margin_Size, Margin_Size, Margin_Size, Margin_Size)

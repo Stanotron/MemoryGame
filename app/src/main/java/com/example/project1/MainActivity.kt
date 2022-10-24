@@ -1,5 +1,6 @@
 package com.example.project1
 
+import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -83,7 +84,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showAlertDialog(title: String, view: View?, positiveClickListener: View.OnClickListener) {
-        AlertDialog.Builder(this)
+        android.app.AlertDialog.Builder(this)
             .setTitle(title)
             .setView(view)
             .setNegativeButton("Cancel",null)
@@ -94,7 +95,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun setupBoard() {
-        when(boardSize){
+        when (boardSize) {
             BoardSize.Easy -> {
                 tvOfMoves.text = "Easy: 4 x 2"
                 tvOfPairs.text = "Pairs: 0 / 4"
@@ -119,7 +120,6 @@ class MainActivity : AppCompatActivity() {
         rvBoard.setHasFixedSize(true)
         rvBoard.layoutManager = GridLayoutManager(this,boardSize.getWidth())
     }
-
 
     private fun updateGameWithFlip(position: Int) {
         if(memoryGame.haveWonGame()){
